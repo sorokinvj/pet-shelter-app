@@ -119,7 +119,7 @@ export default function HomePage() {
           </div>
           
           <div className="footer-bottom">
-            <p>&copy; 2024 Приют Эвакуированных Лап. Сделано с ❤️ для демонстрации клиенту.</p>
+            <p>&copy; 2024 Приют Эвакуированных Лап.</p>
           </div>
         </div>
       </footer>
