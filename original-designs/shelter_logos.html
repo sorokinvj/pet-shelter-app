@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логотипы - Приют Эвакуированных Лап</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2D3748;
+            background: #F7FAFC;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2D3748;
+            margin-bottom: 16px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .logo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .logo-container {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 120px;
+        }
+        
+        .logo-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2D3748;
+        }
+        
+        .logo-description {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .logo-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-download {
+            background: #4ECDC4;
+            color: white;
+        }
+        
+        .btn-download:hover {
+            background: #3BB3B0;
+        }
+        
+        .btn-copy {
+            background: #FFE66D;
+            color: #744210;
+        }
+        
+        .btn-copy:hover {
+            background: #FFDC3D;
+        }
+        
+        .variations {
+            margin-top: 60px;
+        }
+        
+        .variations h2 {
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2D3748;
+        }
+        
+        .variations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .variation-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .variation-card.dark {
+            background: #2D3748;
+            color: white;
+        }
+        
+        .variation-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 16px;
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #68D391;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="notification" id="notification">
+        SVG скопирован в буфер обмена!
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Логотипы Приюта Эвакуированных Лап</h1>
+            <p>Коллекция логотипов в различных стилях и вариациях для всех потребностей бренда</p>
+        </div>
+
+        <div class="logos-grid">
+            <!-- Logo 1: Защищающие руки -->
+            <div class="logo-card">
+                <div class="logo-container">
+                    <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="heartGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Защищающие руки -->
+                        <path d="M20 60 C20 40, 30 35, 40 40 Q50 45, 60 40 C70 35, 80 40, 80 60 L80 75 C80 82, 75 85, 70 85 L30 85 C25 85, 20 82, 20 75 Z" 
+                              fill="url(#heartGradient1)" opacity="0.3"/>
+                        
+                        <!-- Собака в центре -->
+                        <ellipse cx="50" cy="45" rx="12" ry="8" fill="#2D3748"/>
+                        <ellipse cx="46" cy="42" rx="2" ry="2" fill="white"/>
+                        <ellipse cx="54" cy="42" rx="2" ry="2" fill="white"/>
+                        <ellipse cx="50" cy="48" rx="1" ry="1" fill="white"/>
+                        
+                        <!-- Уши -->
+                        <ellipse cx="42" cy="38" rx="4" ry="6" fill="#2D3748"/>
+                        <ellipse cx="58" cy="38" rx="4" ry="6" fill="#2D3748"/>
+                        
+                        <!-- Тело -->
+                        <ellipse cx="50" cy="60" rx="8" ry="12" fill="#2D3748"/>
+                        
+                        <!-- Лапы -->
+                        <ellipse cx="44" cy="70" rx="2" ry="4" fill="#2D3748"/>
+                        <ellipse cx="56" cy="70" rx="2" ry="4" fill="#2D3748"/>
+                        
+                        <!-- Хвост -->
+                        <path d="M58 55 Q65 50, 68 58" stroke="#2D3748" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="logo-title">Защищающие руки</div>
+                <div class="logo-description">Собака в защищающих руках символизирует заботу и спасение</div>
+                <div class="logo-actions">
+                    <button class="btn btn-copy" onclick="copySVG('logo1')">Копировать SVG</button>
+                    <button class="btn btn-download" onclick="downloadSVG('logo1', 'protective-hands')">Скачать</button>
+                </div>
+            </div>
+
+            <!-- Logo 2: Сердце-дом -->
+            <div class="logo-card">
+                <div class="logo-container">
+                    <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="heartGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFE66D;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Сердце-дом -->
+                        <path d="M50,25 C42,15 25,15 25,35 C25,55 50,75 50,75 C50,75 75,55 75,35 C75,15 58,15 50,25 Z" 
+                              fill="url(#heartGradient2)"/>
+                        
+                        <!-- Окно-дверь -->
+                        <rect x="42" y="50" width="16" height="20" rx="2" fill="white" opacity="0.9"/>
+                        <rect x="48" y="56" width="4" height="8" fill="#4ECDC4"/>
+                        <circle cx="46" cy="60" r="1" fill="#4ECDC4"/>
+                        
+                        <!-- Собачка в окне -->
+                        <ellipse cx="50" cy="40" rx="6" ry="4" fill="#2D3748"/>
+                        <ellipse cx="48" cy="38" rx="1" ry="1" fill="white"/>
+                        <ellipse cx="52" cy="38" rx="1" ry="1" fill="white"/>
+                        <ellipse cx="46" cy="36" rx="2" ry="3" fill="#2D3748"/>
+                        <ellipse cx="54" cy="36" rx="2" ry="3" fill="#2D3748"/>
+                    </svg>
+                </div>
+                <div class="logo-title">Сердце-дом</div>
+                <div class="logo-description">Дом в форме сердца символизирует любовь и новый дом</div>
+                <div class="logo-actions">
+                    <button class="btn btn-copy" onclick="copySVG('logo2')">Копировать SVG</button>
+                    <button class="btn btn-download" onclick="downloadSVG('logo2', 'heart-home')">Скачать</button>
+                </div>
+            </div>
+
+            <!-- Logo 3: Лапа в лапе -->
+            <div class="logo-card">
+                <div class="logo-container">
+                    <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="pawsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFE66D;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Круг-фон -->
+                        <circle cx="50" cy="50" r="40" fill="url(#pawsGradient)" opacity="0.2"/>
+                        
+                        <!-- Человеческая рука -->
+                        <ellipse cx="35" cy="50" rx="12" ry="18" fill="#FF6B6B"/>
+                        <ellipse cx="30" cy="42" rx="3" ry="8" fill="#FF6B6B"/>
+                        <ellipse cx="32" cy="38" rx="2" ry="6" fill="#FF6B6B"/>
+                        <ellipse cx="36" cy="36" rx="2" ry="6" fill="#FF6B6B"/>
+                        <ellipse cx="40" cy="38" rx="2" ry="6" fill="#FF6B6B"/>
+                        
+                        <!-- Собачья лапа -->
+                        <ellipse cx="65" cy="50" rx="10" ry="12" fill="#2D3748"/>
+                        <ellipse cx="62" cy="42" rx="2.5" ry="3" fill="#2D3748"/>
+                        <ellipse cx="66" cy="40" rx="2.5" ry="3" fill="#2D3748"/>
+                        <ellipse cx="70" cy="42" rx="2.5" ry="3" fill="#2D3748"/>
+                        <ellipse cx="65" cy="38" rx="2" ry="3" fill="#2D3748"/>
+                        
+                        <!-- Сердечко между ними -->
+                        <path d="M50,45 C48,42 45,42 45,45 C45,48 50,52 50,52 C50,52 55,48 55,45 C55,42 52,42 50,45 Z" 
+                              fill="#FFE66D"/>
+                    </svg>
+                </div>
+                <div class="logo-title">Лапа в лапе</div>
+                <div class="logo-description">Взаимопомощь и дружба между человеком и собакой</div>
+                <div class="logo-actions">
+                    <button class="btn btn-copy" onclick="copySVG('logo3')">Копировать SVG</button>
+                    <button class="btn btn-download" onclick="downloadSVG('logo3', 'paw-in-hand')">Скачать</button>
+                </div>
+            </div>
+
+            <!-- Logo 4: Путь к дому -->
+            <div class="logo-card">
+                <div class="logo-container">
+                    <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#FFE66D;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Дорога -->
+                        <path d="M10 80 Q30 70, 50 75 Q70 80, 90 70" stroke="url(#pathGradient)" stroke-width="6" fill="none" stroke-linecap="round"/>
+                        <path d="M15 85 Q32 76, 50 80 Q68 84, 85 75" stroke="url(#pathGradient)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+                        
+                        <!-- Дом в конце пути -->
+                        <polygon points="80,45 85,40 90,45 90,55 80,55" fill="#4ECDC4"/>
+                        <polygon points="82,40 85,35 88,40" fill="#FF6B6B"/>
+                        <rect x="83" y="48" width="4" height="7" fill="white"/>
+                        <circle cx="84" cy="51" r="0.5" fill="#4ECDC4"/>
+                        
+                        <!-- Собака идет по дороге -->
+                        <ellipse cx="45" cy="60" rx="8" ry="5" fill="#2D3748"/>
+                        <ellipse cx="42" cy="57" rx="1.5" ry="1.5" fill="white"/>
+                        <ellipse cx="48" cy="57" rx="1.5" ry="1.5" fill="white"/>
+                        <ellipse cx="38" cy="54" rx="3" ry="4" fill="#2D3748"/>
+                        <ellipse cx="52" cy="54" rx="3" ry="4" fill="#2D3748"/>
+                        <ellipse cx="45" cy="67" rx="6" ry="8" fill="#2D3748"/>
+                        
+                        <!-- Следы лап -->
+                        <ellipse cx="25" cy="72" rx="2" ry="3" fill="#FFE66D" opacity="0.6"/>
+                        <ellipse cx="30" cy="69" rx="2" ry="3" fill="#FFE66D" opacity="0.6"/>
+                        <ellipse cx="35" cy="71" rx="2" ry="3" fill="#FFE66D" opacity="0.6"/>
+                        
+                        <!-- Солнце -->
+                        <circle cx="20" cy="25" r="8" fill="#FFE66D"/>
+                        <path d="M20,10 L20,18 M10,25 L18,25 M15,15 L21,21 M25,15 L19,21 M30,25 L22,25 M20,40 L20,32 M25,35 L19,29 M15,35 L21,29" 
+                              stroke="#FFE66D" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="logo-title">Путь к дому</div>
+                <div class="logo-description">Дорога от прошлого к новому счастливому дому</div>
+                <div class="logo-actions">
+                    <button class="btn btn-copy" onclick="copySVG('logo4')">Копировать SVG</button>
+                    <button class="btn btn-download" onclick="downloadSVG('logo4', 'path-home')">Скачать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="variations">
+            <h2>Вариации основного логотипа</h2>
+            <div class="variations-grid">
+                <!-- Полноцветный -->
+                <div class="variation-card">
+                    <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 60 C20 40, 30 35, 40 40 Q50 45, 60 40 C70 35, 80 40, 80 60 L80 75 C80 82, 75 85, 70 85 L30 85 C25 85, 20 82, 20 75 Z" 
+                              fill="url(#mainGradient)" opacity="0.3"/>
+                        <ellipse cx="50" cy="45" rx="12" ry="8" fill="#2D3748"/>
+                        <ellipse cx="46" cy="42" rx="2" ry="2" fill="white"/>
+                        <ellipse cx="54" cy="42" rx="2" ry="2" fill="white"/>
+                        <ellipse cx="42" cy="38" rx="4" ry="6" fill="#2D3748"/>
+                        <ellipse cx="58" cy="38" rx="4" ry="6" fill="#2D3748"/>
+                        <ellipse cx="50" cy="60" rx="8" ry="12" fill="#2D3748"/>
+                    </svg>
+                    <div class="variation-title">Полноцветный</div>
+                </div>
+
+                <!-- Монохромный темный -->
+                <div class="variation-card">
+                    <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 60 C20 40, 30 35, 40 40 Q50 45, 60 40 C70 35, 80 40, 80 60 L80 75 C80 82, 75 85, 70 85 L30 85 C25 85, 20 82, 20 75 Z" 
+                              fill="#2D3748" opacity="0.3"/>
+                        <ellipse cx="50" cy="45" rx="12" ry="8" fill="#2D3748"/>
+                        <ellipse cx="46" cy="42" rx="2" ry="2" fill="white"/>
+                        <ellipse cx="54" cy="42" rx="2" ry="2" fill="white"/>
+                        <ellipse cx="42" cy="38" rx="4" ry="6" fill="#2D3748"/>
+                        <ellipse cx="58" cy="38" rx="4" ry="6" fill="#2D3748"/>
+                        <ellipse cx="50" cy="60" rx="8" ry="12" fill="#2D3748"/>
+                    </svg>
+                    <div class="variation-title">Монохромный</div>
+                </div>
+
+                <!-- Для темного фона -->
+                <div class="variation-card dark">
+                    <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 60 C20 40, 30 35, 40 40 Q50 45, 60 40 C70 35, 80 40, 80 60 L80 75 C80 82, 75 85, 70 85 L30 85 C25 85, 20 82, 20 75 Z" 
+                              fill="white" opacity="0.3"/>
+                        <ellipse cx="50" cy="45" rx="12" ry="8" fill="white"/>
+                        <ellipse cx="46" cy="42" rx="2" ry="2" fill="#2D3748"/>
+                        <ellipse cx="54" cy="42" rx="2" ry="2" fill="#2D3748"/>
+                        <ellipse cx="42" cy="38" rx="4" ry="6" fill="white"/>
+                        <ellipse cx="58" cy="38" rx="4" ry="6" fill="white"/>
+                        <ellipse cx="50" cy="60" rx="8" ry="12" fill="white"/>
+                    </svg>
+                    <div class="variation-title">Для темного фона</div>
+                </div>
+
+                <!-- Контурный -->
+                <div class="variation-card">
+                    <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 60 C20 40, 30 35, 40 40 Q50 45, 60 40 C70 35, 80 40, 80 60 L80 75 C80 82, 75 85, 70 85 L30 85 C25 85, 20 82, 20 75 Z" 
+                              fill="none" stroke="#FF6B6B" stroke-width="2"/>
+                        <ellipse cx="50" cy="45" rx="12" ry="8" fill="none" stroke="#2D3748" stroke-width="2"/>
+                        <ellipse cx="46" cy="42" rx="2" ry="2" fill="#2D3748"/>
+                        <ellipse cx="54" cy="42" rx="2" ry="2" fill="#2D3748"/>
+                        <ellipse cx="42" cy="38" rx="4" ry="6" fill="none" stroke="#2D3748" stroke-width="2"/>
+                        <ellipse cx="58" cy="38" rx="4" ry="6" fill="none" stroke="#2D3748" stroke-width="2"/>
+                        <ellipse cx="50" cy="60" rx="8" ry="12" fill="none" stroke="#2D3748" stroke-width="2"/>
+                    </svg>
+                    <div class="variation-title">Контурный</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const svgData = {
+            logo1: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="heartGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M20 60 C20 40, 30 35, 40 40 Q50 45, 60 40 C70 35, 80 40, 80 60 L80 75 C80 82, 75 85, 70 85 L30 85 C25 85, 20 82, 20 75 Z" 
+                      fill="url(#heartGradient1)" opacity="0.3"/>
+                <ellipse cx="50" cy="45" rx="12" ry="8" fill="#2D3748"/>
+                <ellipse cx="46" cy="42" rx="2" ry="2" fill="white"/>
+                <ellipse cx="54" cy="42" rx="2" ry="2" fill="white"/>
+                <ellipse cx="50" cy="48" rx="1" ry="1" fill="white"/>
+                <ellipse cx="42" cy="38" rx="4" ry="6" fill="#2D3748"/>
+                <ellipse cx="58" cy="38" rx="4" ry="6" fill="#2D3748"/>
+                <ellipse cx="50" cy="60" rx="8" ry="12" fill="#2D3748"/>
+                <ellipse cx="44" cy="70" rx="2" ry="4" fill="#2D3748"/>
+                <ellipse cx="56" cy="70" rx="2" ry="4" fill="#2D3748"/>
+                <path d="M58 55 Q65 50, 68 58" stroke="#2D3748" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>`,
+            
+            logo2: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="heartGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FFE66D;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M50,25 C42,15 25,15 25,35 C25,55 50,75 50,75 C50,75 75,55 75,35 C75,15 58,15 50,25 Z" 
+                      fill="url(#heartGradient2)"/>
+                <rect x="42" y="50" width="16" height="20" rx="2" fill="white" opacity="0.9"/>
+                <rect x="48" y="56" width="4" height="8" fill="#4ECDC4"/>
+                <circle cx="46" cy="60" r="1" fill="#4ECDC4"/>
+                <ellipse cx="50" cy="40" rx="6" ry="4" fill="#2D3748"/>
+                <ellipse cx="48" cy="38" rx="1" ry="1" fill="white"/>
+                <ellipse cx="52" cy="38" rx="1" ry="1" fill="white"/>
+                <ellipse cx="46" cy="36" rx="2" ry="3" fill="#2D3748"/>
+                <ellipse cx="54" cy="36" rx="2" ry="3" fill="#2D3748"/>
+            </svg>`,
+            
+            logo3: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="pawsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FFE66D;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="40" fill="url(#pawsGradient)" opacity="0.2"/>
+                <ellipse cx="35" cy="50" rx="12" ry="18" fill="#FF6B6B"/>
+                <ellipse cx="30" cy="42" rx="3" ry="8" fill="#FF6B6B"/>
+                <ellipse cx="32" cy="38" rx="2" ry="6" fill="#FF6B6B"/>
+                <ellipse cx="36" cy="36" rx="2" ry="6" fill="#FF6B6B"/>
+                <ellipse cx="40" cy="38" rx="2" ry="6" fill="#FF6B6B"/>
+                <ellipse cx="65" cy="50" rx="10" ry="12" fill="#2D3748"/>
+                <ellipse cx="62" cy="42" rx="2.5" ry="3" fill="#2D3748"/>
+                <ellipse cx="66" cy="40" rx="2.5" ry="3" fill="#2D3748"/>
+                <ellipse cx="70" cy="42" rx="2.5" ry="3" fill="#2D3748"/>
+                <ellipse cx="65" cy="38" rx="2" ry="3" fill="#2D3748"/>
+                <path d="M50,45 C48,42 45,42 45,45 C45,48 50,52 50,52 C50,52 55,48 55,45 C55,42 52,42 50,45 Z" 
+                      fill="#FFE66D"/>
+            </svg>`,
+            
+            logo4: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#FFE66D;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M10 80 Q30 70, 50 75 Q70 80, 90 70" stroke="url(#pathGradient)" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M15 85 Q32 76, 50 80 Q68 84, 85 75" stroke="url(#pathGradient)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+                <polygon points="80,45 85,40 90,45 90,55 80,55" fill="#4ECDC4"/>
+                <polygon points="82,40 85,35 88,40" fill="#FF6B6B"/>
+                <rect x="83" y="48" width="4" height="7" fill="white"/>
+                <circle cx="84" cy="51" r="0.5" fill="#4ECDC4"/>
+                <ellipse cx="45" cy="60" rx="8" ry="5" fill="#2D3748"/>
+                <ellipse cx="42" cy="57" rx="1.5" ry="1.5" fill="white"/>
+                <ellipse cx="48" cy="57" rx="1.5" ry="1.5" fill="white"/>
+                <ellipse cx="38" cy="54" rx="3" ry="4" fill="#2D3748"/>
+                <ellipse cx="52" cy="54" rx="3" ry="4" fill="#2D3748"/>
+                <ellipse cx="45" cy="67" rx="6" ry="8" fill="#2D3748"/>
+                <ellipse cx="25" cy="72" rx="2" ry="3" fill="#FFE66D" opacity="0.6"/>
+                <ellipse cx="30" cy="69" rx="2" ry="3" fill="#FFE66D" opacity="0.6"/>
+                <ellipse cx="35" cy="71" rx="2" ry="3" fill="#FFE66D" opacity="0.6"/>
+                <circle cx="20" cy="25" r="8" fill="#FFE66D"/>
+                <path d="M20,10 L20,18 M10,25 L18,25 M15,15 L21,21 M25,15 L19,21 M30,25 L22,25 M20,40 L20,32 M25,35 L19,29 M15,35 L21,29" 
+                      stroke="#FFE66D" stroke-width="2" stroke-linecap="round"/>
+            </svg>`
+        };
+        
+        function copySVG(logoId) {
+            const svgCode = svgData[logoId];
+            navigator.clipboard.writeText(svgCode).then(function() {
+                showNotification();
+            });
+        }
+        
+        function downloadSVG(logoId, filename) {
+            const svgCode = svgData[logoId];
+            const blob = new Blob([svgCode], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${filename}-logo.svg`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            URL.revokeObjectURL(url);
+        }
+        
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

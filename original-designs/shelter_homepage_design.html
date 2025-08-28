@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приют Эвакуированных Лап - Спасенные герои ищут дом</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2D3748;
+            background-color: #F7FAFC;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 20px;
+            color: #FF6B6B;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2D3748;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: #FF6B6B;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: #FF6B6B;
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: #FF5252;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #4ECDC4;
+            border: 2px solid #4ECDC4;
+        }
+        
+        .btn-secondary:hover {
+            background: #4ECDC4;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero .subtitle {
+            font-family: 'Caveat', cursive;
+            font-size: 24px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .hero .btn-secondary:hover {
+            background: white;
+            color: #FF6B6B;
+        }
+        
+        /* Stats */
+        .stats {
+            background: white;
+            padding: 48px 0;
+            margin-top: -24px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 24px;
+            border-radius: 16px;
+            background: #F7FAFC;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #FF6B6B;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            color: #718096;
+            font-weight: 500;
+        }
+        
+        /* Dogs Section */
+        .dogs-section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #2D3748;
+        }
+        
+        .section-subtitle {
+            font-family: 'Caveat', cursive;
+            font-size: 20px;
+            color: #FF6B6B;
+            margin-bottom: 8px;
+        }
+        
+        .section-description {
+            font-size: 18px;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .dogs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        
+        .dog-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #FFE66D;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .dog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+        
+        .dog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #E2E8F0, #CBD5E0);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #718096;
+            font-size: 48px;
+        }
+        
+        .dog-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .dog-status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        
+        .status-adapting {
+            background: #FFE66D;
+            color: #744210;
+        }
+        
+        .status-ready {
+            background: #68D391;
+            color: #22543D;
+        }
+        
+        .status-special {
+            background: #B794F6;
+            color: #44337A;
+        }
+        
+        .dog-description {
+            color: #718096;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        /* Mission Section */
+        .mission {
+            background: #F7E6D3;
+            padding: 80px 0;
+        }
+        
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .mission-text h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #2D3748;
+        }
+        
+        .mission-quote {
+            font-family: 'Caveat', cursive;
+            font-size: 20px;
+            color: #FF6B6B;
+            margin-bottom: 16px;
+        }
+        
+        .mission-text p {
+            color: #718096;
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+        
+        .mission-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #4ECDC4, #FFE66D);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 64px;
+        }
+        
+        /* Help Section */
+        .help-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        
+        .help-card {
+            text-align: center;
+            padding: 32px 24px;
+            border-radius: 16px;
+            background: #F7FAFC;
+            transition: transform 0.3s ease;
+        }
+        
+        .help-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .help-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 16px;
+            background: #FF6B6B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .help-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .help-card p {
+            color: #718096;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2D3748;
+            color: white;
+            padding: 48px 0 24px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 16px;
+            color: #FFE66D;
+        }
+        
+        .footer-section a {
+            color: #CBD5E0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.2s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #4A5568;
+            padding-top: 24px;
+            text-align: center;
+            color: #A0AEC0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mission-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-icon">🐕</div>
+                <span>Приют Эвакуированных Лап</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#dogs">Наши собаки</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#help">Как помочь</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <a href="#help" class="btn btn-primary">Помочь</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="subtitle">Каждый заслуживает второй шанс</div>
+                <h1>Спасенные герои ищут дом</h1>
+                <p>Эти удивительные собаки пережили невозможное и показали невероятную стойкость. Теперь они готовы подарить всю свою любовь новым семьям.</p>
+                <div class="hero-actions">
+                    <a href="#dogs" class="btn btn-primary">Познакомиться с собаками</a>
+                    <a href="#about" class="btn btn-secondary">Узнать больше</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">Собак спасено</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">89</div>
+                        <div class="stat-label">Нашли дом</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">23</div>
+                        <div class="stat-label">Ищут семью</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">44</div>
+                        <div class="stat-label">Адаптируются</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dogs" class="dogs-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-subtitle">Знакомьтесь</div>
+                    <h2 class="section-title">Наши герои</h2>
+                    <p class="section-description">Каждая собака в нашем приюте — это история стойкости, надежды и невероятной способности к любви.</p>
+                </div>
+                
+                <div class="dogs-grid">
+                    <div class="dog-card">
+                        <div class="dog-image">🐕</div>
+                        <h3 class="dog-name">Барон, 3 года</h3>
+                        <span class="dog-status status-ready">🟢 Готов к семье</span>
+                        <p class="dog-description">Благородный и умный пес, который обожает долгие прогулки и уже научился играть с мячиком. Ищет активную семью для совместных приключений.</p>
+                        <a href="#" class="btn btn-primary">Познакомиться</a>
+                    </div>
+                    
+                    <div class="dog-card">
+                        <div class="dog-image">🐕‍🦺</div>
+                        <h3 class="dog-name">Лада, 2 года</h3>
+                        <span class="dog-status status-adapting">🟡 Адаптируется</span>
+                        <p class="dog-description">Нежная и ласковая девочка, которая каждый день открывает для себя радости мирной жизни. Любит тихие вечера и объятия.</p>
+                        <a href="#" class="btn btn-primary">Познакомиться</a>
+                    </div>
+                    
+                    <div class="dog-card">
+                        <div class="dog-image">🦮</div>
+                        <h3 class="dog-name">Рекс, 5 лет</h3>
+                        <span class="dog-status status-special">🟣 Особые потребности</span>
+                        <p class="dog-description">Мудрый и спокойный пес, который будет идеальным компаньоном для тихих семей. Нуждается в терпеливых и понимающих хозяевах.</p>
+                        <a href="#" class="btn btn-primary">Познакомиться</a>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="#" class="btn btn-secondary">Смотреть всех собак</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mission">
+            <div class="container">
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <div class="mission-quote">"Каждая спасенная жизнь — это победа добра"</div>
+                        <h2>Наша миссия</h2>
+                        <p>Мы — команда волонтеров, которая верит, что каждая собака заслуживает любви и заботы. Наши герои пережили невероятные испытания, но не утратили способность доверять и любить.</p>
+                        <p>Мы помогаем им адаптироваться к мирной жизни и находим для каждого идеальную семью, где они смогут быть по-настоящему счастливыми.</p>
+                        <a href="#about" class="btn btn-primary">Узнать больше о нас</a>
+                    </div>
+                    <div class="mission-image">
+                        ❤️
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="help" class="help-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-subtitle">Вместе мы сильнее</div>
+                    <h2 class="section-title">Как помочь</h2>
+                    <p class="section-description">Есть много способов поддержать наших героев. Каждая помощь важна и делает разницу.</p>
+                </div>
+                
+                <div class="help-grid">
+                    <div class="help-card">
+                        <div class="help-icon">🏠</div>
+                        <h3>Взять питомца</h3>
+                        <p>Подарите дом одному из наших героев и получите верного друга на всю жизнь.</p>
+                        <a href="#" class="btn btn-primary">Хочу собаку</a>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-icon">💝</div>
+                        <h3>Передержка</h3>
+                        <p>Временно приютите собаку, пока мы ищем ей постоянную семью.</p>
+                        <a href="#" class="btn btn-secondary">Узнать подробнее</a>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-icon">🎁</div>
+                        <h3>Помочь деньгами</h3>
+                        <p>Ваши пожертвования идут на корм, лечение и уход за нашими подопечными.</p>
+                        <a href="#" class="btn btn-secondary">Пожертвовать</a>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-icon">🤝</div>
+                        <h3>Волонтерство</h3>
+                        <p>Присоединитесь к нашей команде и помогайте собакам напрямую.</p>
+                        <a href="#" class="btn btn-secondary">Стать волонтером</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <a href="tel:+7-xxx-xxx-xxxx">+7 (XXX) XXX-XX-XX</a>
+                    <a href="mailto:info@evacuatedpaws.ru">info@evacuatedpaws.ru</a>
+                    <a href="#">Telegram канал</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Разделы</h3>
+                    <a href="#">Наши собаки</a>
+                    <a href="#">О приюте</a>
+                    <a href="#">Как помочь</a>
+                    <a href="#">Истории успеха</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Помощь</h3>
+                    <a href="#">Взять питомца</a>
+                    <a href="#">Пожертвовать</a>
+                    <a href="#">Стать волонтером</a>
+                    <a href="#">Передержка</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Документы</h3>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                    <a href="#">Реквизиты</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Приют Эвакуированных Лап. Сделано с ❤️ для наших героев.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
