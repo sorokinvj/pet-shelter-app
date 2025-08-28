@@ -71,20 +71,20 @@ export default function HomePage() {
               <Link href="/dogs/baron" className="btn btn-primary">Познакомиться</Link>
             </div>
             
-            <div className="dog-card">
+            <div className="dog-card" style={{opacity: 0.6, pointerEvents: 'none'}}>
               <div className="dog-image">🐕‍🦺</div>
               <h3 className="dog-name">Лада, 2 года</h3>
               <span className="dog-status status-adapting">🟡 Адаптируется</span>
               <p className="dog-description">Нежная и ласковая девочка, которая каждый день открывает для себя радости мирной жизни.</p>
-              <Link href="/dogs/lada" className="btn btn-primary">Познакомиться</Link>
+              <button className="btn btn-primary" style={{opacity: 0.5, cursor: 'not-allowed'}} disabled>Скоро доступно</button>
             </div>
             
-            <div className="dog-card">
+            <div className="dog-card" style={{opacity: 0.6, pointerEvents: 'none'}}>
               <div className="dog-image">🦮</div>
               <h3 className="dog-name">Рекс, 5 лет</h3>
               <span className="dog-status status-special">🟣 Особые потребности</span>
               <p className="dog-description">Мудрый и спокойный пес, который будет идеальным компаньоном для тихих семей.</p>
-              <Link href="/dogs/rex" className="btn btn-primary">Познакомиться</Link>
+              <button className="btn btn-primary" style={{opacity: 0.5, cursor: 'not-allowed'}} disabled>Скоро доступно</button>
             </div>
           </div>
           

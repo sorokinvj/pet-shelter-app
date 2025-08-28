@@ -120,7 +120,7 @@ export default function DogsPage() {
               </div>
             </div>
             
-            <div className="dog-card">
+            <div className="dog-card" style={{opacity: 0.6, pointerEvents: 'none'}}>
               <div className="dog-image" style={{position: 'relative'}}>
                 🐕‍🦺
                 <div style={{position: 'absolute', top: '12px', right: '12px', padding: '6px 12px', borderRadius: '12px', fontSize: '12px', fontWeight: '500', background: 'rgba(255, 230, 109, 0.9)', color: '#744210'}}>
@@ -133,7 +133,7 @@ export default function DogsPage() {
                     <div className="dog-name">Лада</div>
                     <div style={{color: '#718096', fontSize: '14px'}}>2 года, девочка</div>
                   </div>
-                  <button style={{background: '#FF6B6B', border: '2px solid #FF6B6B', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white'}}>♥</button>
+                  <button style={{background: '#FF6B6B', border: '2px solid #FF6B6B', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', opacity: 0.5}}>♥</button>
                 </div>
                 <div style={{display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '12px'}}>
                   <span style={{background: '#F7FAFC', color: '#718096', padding: '4px 8px', borderRadius: '8px', fontSize: '12px'}}>Ласковая</span>
@@ -142,13 +142,13 @@ export default function DogsPage() {
                 </div>
                 <p className="dog-description">Нежная и ласковая девочка, которая каждый день открывает для себя радости мирной жизни.</p>
                 <div style={{display: 'flex', gap: '12px'}}>
-                  <Link href="/dogs/lada" className="btn btn-primary" style={{padding: '8px 16px', fontSize: '14px'}}>Познакомиться</Link>
-                  <button className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '14px'}}>Убрать из избранного</button>
+                  <button className="btn btn-primary" style={{padding: '8px 16px', fontSize: '14px', opacity: 0.5, cursor: 'not-allowed'}} disabled>Скоро доступно</button>
+                  <button className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '14px', opacity: 0.5, cursor: 'not-allowed'}} disabled>В избранное</button>
                 </div>
               </div>
             </div>
 
-            <div className="dog-card">
+            <div className="dog-card" style={{opacity: 0.6, pointerEvents: 'none'}}>
               <div className="dog-image" style={{position: 'relative'}}>
                 🦮
                 <div style={{position: 'absolute', top: '12px', right: '12px', padding: '6px 12px', borderRadius: '12px', fontSize: '12px', fontWeight: '500', background: 'rgba(183, 148, 246, 0.9)', color: 'white'}}>
@@ -161,7 +161,7 @@ export default function DogsPage() {
                     <div className="dog-name">Рекс</div>
                     <div style={{color: '#718096', fontSize: '14px'}}>5 лет, мальчик</div>
                   </div>
-                  <button style={{background: '#F7FAFC', border: '2px solid #E2E8F0', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>♡</button>
+                  <button style={{background: '#F7FAFC', border: '2px solid #E2E8F0', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.5}}>♡</button>
                 </div>
                 <div style={{display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '12px'}}>
                   <span style={{background: '#F7FAFC', color: '#718096', padding: '4px 8px', borderRadius: '8px', fontSize: '12px'}}>Мудрый</span>
@@ -170,13 +170,13 @@ export default function DogsPage() {
                 </div>
                 <p className="dog-description">Мудрый и спокойный пес, который будет идеальным компаньоном для тихих семей.</p>
                 <div style={{display: 'flex', gap: '12px'}}>
-                  <Link href="/dogs/rex" className="btn btn-primary" style={{padding: '8px 16px', fontSize: '14px'}}>Познакомиться</Link>
-                  <button className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '14px'}}>В избранное</button>
+                  <button className="btn btn-primary" style={{padding: '8px 16px', fontSize: '14px', opacity: 0.5, cursor: 'not-allowed'}} disabled>Скоро доступно</button>
+                  <button className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '14px', opacity: 0.5, cursor: 'not-allowed'}} disabled>В избранное</button>
                 </div>
               </div>
             </div>
 
-            <div className="dog-card">
+            <div className="dog-card" style={{opacity: 0.6, pointerEvents: 'none'}}>
               <div className="dog-image" style={{position: 'relative'}}>
                 🐶
                 <div style={{position: 'absolute', top: '12px', right: '12px', padding: '6px 12px', borderRadius: '12px', fontSize: '12px', fontWeight: '500', background: 'rgba(104, 211, 145, 0.9)', color: 'white'}}>
@@ -189,7 +189,7 @@ export default function DogsPage() {
                     <div className="dog-name">Майя</div>
                     <div style={{color: '#718096', fontSize: '14px'}}>1 год, девочка</div>
                   </div>
-                  <button style={{background: '#F7FAFC', border: '2px solid #E2E8F0', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>♡</button>
+                  <button style={{background: '#F7FAFC', border: '2px solid #E2E8F0', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.5}}>♡</button>
                 </div>
                 <div style={{display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '12px'}}>
                   <span style={{background: '#F7FAFC', color: '#718096', padding: '4px 8px', borderRadius: '8px', fontSize: '12px'}}>Игривая</span>
@@ -198,13 +198,13 @@ export default function DogsPage() {
                 </div>
                 <p className="dog-description">Молодая и жизнерадостная собачка, которая готова стать лучшим другом для активной семьи.</p>
                 <div style={{display: 'flex', gap: '12px'}}>
-                  <Link href="/dogs/maya" className="btn btn-primary" style={{padding: '8px 16px', fontSize: '14px'}}>Познакомиться</Link>
-                  <button className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '14px'}}>В избранное</button>
+                  <button className="btn btn-primary" style={{padding: '8px 16px', fontSize: '14px', opacity: 0.5, cursor: 'not-allowed'}} disabled>Скоро доступно</button>
+                  <button className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '14px', opacity: 0.5, cursor: 'not-allowed'}} disabled>В избранное</button>
                 </div>
               </div>
             </div>
 
-            <div className="dog-card">
+            <div className="dog-card" style={{opacity: 0.6, pointerEvents: 'none'}}>
               <div className="dog-image" style={{position: 'relative'}}>
                 🐕‍🦺
                 <div style={{position: 'absolute', top: '12px', right: '12px', padding: '6px 12px', borderRadius: '12px', fontSize: '12px', fontWeight: '500', background: 'rgba(255, 230, 109, 0.9)', color: '#744210'}}>
@@ -217,7 +217,7 @@ export default function DogsPage() {
                     <div className="dog-name">Граф</div>
                     <div style={{color: '#718096', fontSize: '14px'}}>4 года, мальчик</div>
                   </div>
-                  <button style={{background: '#F7FAFC', border: '2px solid #E2E8F0', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>♡</button>
+                  <button style={{background: '#F7FAFC', border: '2px solid #E2E8F0', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.5}}>♡</button>
                 </div>
                 <div style={{display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '12px'}}>
                   <span style={{background: '#F7FAFC', color: '#718096', padding: '4px 8px', borderRadius: '8px', fontSize: '12px'}}>Благородный</span>
@@ -226,13 +226,13 @@ export default function DogsPage() {
                 </div>
                 <p className="dog-description">Элегантный пес с аристократическими манерами. Постепенно учится доверять людям.</p>
                 <div style={{display: 'flex', gap: '12px'}}>
-                  <Link href="/dogs/graf" className="btn btn-primary" style={{padding: '8px 16px', fontSize: '14px'}}>Познакомиться</Link>
-                  <button className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '14px'}}>В избранное</button>
+                  <button className="btn btn-primary" style={{padding: '8px 16px', fontSize: '14px', opacity: 0.5, cursor: 'not-allowed'}} disabled>Скоро доступно</button>
+                  <button className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '14px', opacity: 0.5, cursor: 'not-allowed'}} disabled>В избранное</button>
                 </div>
               </div>
             </div>
 
-            <div className="dog-card">
+            <div className="dog-card" style={{opacity: 0.6, pointerEvents: 'none'}}>
               <div className="dog-image" style={{position: 'relative'}}>
                 🐕
                 <div style={{position: 'absolute', top: '12px', right: '12px', padding: '6px 12px', borderRadius: '12px', fontSize: '12px', fontWeight: '500', background: 'rgba(104, 211, 145, 0.9)', color: 'white'}}>
@@ -245,7 +245,7 @@ export default function DogsPage() {
                     <div className="dog-name">Белла</div>
                     <div style={{color: '#718096', fontSize: '14px'}}>3 года, девочка</div>
                   </div>
-                  <button style={{background: '#F7FAFC', border: '2px solid #E2E8F0', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>♡</button>
+                  <button style={{background: '#F7FAFC', border: '2px solid #E2E8F0', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.5}}>♡</button>
                 </div>
                 <div style={{display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '12px'}}>
                   <span style={{background: '#F7FAFC', color: '#718096', padding: '4px 8px', borderRadius: '8px', fontSize: '12px'}}>Дружелюбная</span>
@@ -254,8 +254,8 @@ export default function DogsPage() {
                 </div>
                 <p className="dog-description">Социальная и дружелюбная собака, которая легко находит общий язык с людьми и другими животными.</p>
                 <div style={{display: 'flex', gap: '12px'}}>
-                  <Link href="/dogs/bella" className="btn btn-primary" style={{padding: '8px 16px', fontSize: '14px'}}>Познакомиться</Link>
-                  <button className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '14px'}}>В избранное</button>
+                  <button className="btn btn-primary" style={{padding: '8px 16px', fontSize: '14px', opacity: 0.5, cursor: 'not-allowed'}} disabled>Скоро доступно</button>
+                  <button className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '14px', opacity: 0.5, cursor: 'not-allowed'}} disabled>В избранное</button>
                 </div>
               </div>
             </div>
