@@ -76,7 +76,7 @@ export default function LoginPage() {
             Нет аккаунта? Зарегистрироваться
           </Link>
         </div>
-        <div className="text-center text-sm pt-4 border-t">
+        <div className="text-center text-sm pt-4 border-t border-gray-200">
           <Link href="/" className="text-gray-500 hover:underline">
             ← Вернуться на сайт
           </Link>

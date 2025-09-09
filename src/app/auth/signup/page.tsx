@@ -76,7 +76,7 @@ export default function SignupPage() {
           </button>
         </form>
 
-        <div className="text-center text-sm pt-4 border-t">
+        <div className="text-center text-sm pt-4 border-t border-gray-200">
           <Link href="/auth/login" className="font-medium text-secondary hover:underline">
             Уже есть аккаунт? Войти
           </Link>

@@ -1,10 +1,23 @@
+'use client';
+
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
+import type { User } from '@supabase/supabase-js';
 
-
-export default async function Header() {
+export default function Header() {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
   const supabase = createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUser(user);
+      setLoading(false);
+    };
+    getUser();
+  }, [supabase.auth]);
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -18,17 +31,21 @@ export default async function Header() {
           <Link href="/about" className="hover:text-primary transition-colors">О нас</Link>
           <Link href="/contact" className="hover:text-primary transition-colors">Контакты</Link>
         </div>
-        <div className="flex items-center gap-4">
-          {user ? (
-            <Link href="/admin" className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-full hover:bg-opacity-90 transition">
-              В админку
-            </Link>
-          ) : (
+        <div className="flex items-center gap-4 h-9">
+          {!loading && (
             <>
-              <Link href="/auth/login" className="text-sm font-medium text-gray-600 hover:text-primary transition">Вход</Link>
-              <Link href="/auth/signup" className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-full hover:bg-opacity-90 transition">
-                Регистрация
-              </Link>
+              {user ? (
+                <Link href="/admin" className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-full hover:bg-opacity-90 transition">
+                  В админку
+                </Link>
+              ) : (
+                <>
+                  <Link href="/auth/login" className="text-sm font-medium text-gray-600 hover:text-primary transition">Вход</Link>
+                  <Link href="/auth/signup" className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-full hover:bg-opacity-90 transition">
+                    Регистрация
+                  </Link>
+                </>
+              )}
             </>
           )}
         </div>
