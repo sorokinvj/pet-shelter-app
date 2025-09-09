@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createClient } from '../../../../lib/supabase/client'
+import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
 
 export default function LoginPage() {
@@ -17,129 +17,71 @@ export default function LoginPage() {
     e.preventDefault()
     setLoading(true)
     setError(null)
-
-    try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      })
-
-      if (error) {
-        setError(error.message)
-      } else {
-        router.push('/admin')
-        router.refresh()
-      }
-    } catch (err) {
-      setError('Произошла ошибка при входе')
-    } finally {
-      setLoading(false)
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) {
+      setError(error.message)
+    } else {
+      router.push('/admin')
+      router.refresh()
     }
+    setLoading(false)
   }
 
   return (
-    <main style={{minHeight: '100vh', background: 'linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-      <div style={{background: 'white', borderRadius: '16px', padding: '48px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', maxWidth: '400px', width: '100%'}}>
-        <div style={{textAlign: 'center', marginBottom: '32px'}}>
-          <div style={{width: '60px', height: '60px', background: 'linear-gradient(135deg, #FF6B6B, #4ECDC4)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '24px', margin: '0 auto 16px'}}>🐕</div>
-          <h1 style={{fontSize: '24px', fontWeight: '700', color: '#2D3748', marginBottom: '8px'}}>Вход в админ-панель</h1>
-          <p style={{color: '#718096'}}>Приют Эвакуированных Лап</p>
+    <div className="min-h-[calc(100vh-68px)] bg-gradient-to-br from-red-100 via-yellow-50 to-teal-50 flex items-center justify-center p-4">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 space-y-6">
+        <div className="text-center space-y-2">
+          <div className="mx-auto w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white text-3xl">🐕</div>
+          <h1 className="text-2xl font-bold text-gray-800">Вход в админ-панель</h1>
+          <p className="text-gray-500">Приют Эвакуированных Лап</p>
         </div>
 
-        <form onSubmit={handleLogin}>
-          <div style={{marginBottom: '20px'}}>
-            <label style={{display: 'block', marginBottom: '8px', fontWeight: '500', color: '#2D3748'}}>
-              Email
-            </label>
+        <form onSubmit={handleLogin} className="space-y-4">
+          <div>
+            <label className="text-sm font-medium text-gray-700" htmlFor="email">Email</label>
             <input
+              id="email"
+              className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary transition"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              style={{
-                width: '100%',
-                padding: '12px 16px',
-                border: '2px solid #E2E8F0',
-                borderRadius: '8px',
-                fontSize: '16px',
-                fontFamily: 'inherit',
-                transition: 'border-color 0.2s'
-              }}
-              onFocus={(e) => e.target.style.borderColor = '#4ECDC4'}
-              onBlur={(e) => e.target.style.borderColor = '#E2E8F0'}
             />
           </div>
-
-          <div style={{marginBottom: '24px'}}>
-            <label style={{display: 'block', marginBottom: '8px', fontWeight: '500', color: '#2D3748'}}>
-              Пароль
-            </label>
+          <div>
+            <label className="text-sm font-medium text-gray-700" htmlFor="password">Пароль</label>
             <input
+              id="password"
+              className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-secondary focus:border-secondary transition"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              style={{
-                width: '100%',
-                padding: '12px 16px',
-                border: '2px solid #E2E8F0',
-                borderRadius: '8px',
-                fontSize: '16px',
-                fontFamily: 'inherit',
-                transition: 'border-color 0.2s'
-              }}
-              onFocus={(e) => e.target.style.borderColor = '#4ECDC4'}
-              onBlur={(e) => e.target.style.borderColor = '#E2E8F0'}
             />
           </div>
 
-          {error && (
-            <div style={{
-              background: '#FED7D7',
-              border: '1px solid #FC8181',
-              color: '#C53030',
-              padding: '12px',
-              borderRadius: '8px',
-              marginBottom: '20px',
-              fontSize: '14px'
-            }}>
-              {error}
-            </div>
-          )}
+          {error && <p className="text-sm text-red-600 bg-red-100 border border-red-300 rounded-lg p-3">{error}</p>}
 
           <button
             type="submit"
             disabled={loading}
-            style={{
-              width: '100%',
-              padding: '12px 24px',
-              background: loading ? '#CBD5E0' : '#FF6B6B',
-              color: 'white',
-              border: 'none',
-              borderRadius: '8px',
-              fontSize: '16px',
-              fontWeight: '500',
-              cursor: loading ? 'not-allowed' : 'pointer',
-              transition: 'all 0.2s',
-              marginBottom: '16px'
-            }}
+            className="w-full px-4 py-2 text-white font-semibold bg-primary rounded-lg hover:bg-opacity-90 disabled:bg-gray-400 transition-all"
           >
             {loading ? 'Вход...' : 'Войти'}
           </button>
-
-          <div style={{textAlign: 'center'}}>
-            <Link href="/auth/signup" style={{color: '#4ECDC4', textDecoration: 'none', fontSize: '14px'}}>
-              Нет аккаунта? Зарегистрироваться
-            </Link>
-          </div>
         </form>
 
-        <div style={{textAlign: 'center', marginTop: '24px', paddingTop: '24px', borderTop: '1px solid #E2E8F0'}}>
-          <Link href="/" style={{color: '#718096', textDecoration: 'none', fontSize: '14px'}}>
+        <div className="text-center text-sm">
+          <Link href="/auth/signup" className="font-medium text-secondary hover:underline">
+            Нет аккаунта? Зарегистрироваться
+          </Link>
+        </div>
+        <div className="text-center text-sm pt-4 border-t">
+          <Link href="/" className="text-gray-500 hover:underline">
             ← Вернуться на сайт
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
